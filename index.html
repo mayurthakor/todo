@@ -22,14 +22,14 @@
                 
                 <div class="all-todos">
                     <div v-for="todo in todos" class="single-todo" :class="{ done: todo.done }">
-                        <p @click="todo.done = !todo.done" >{{ todo.text }}</p>
+                        <p @click="todo.done = !todo.done; storeToDos()" >{{ todo.text }}</p>
                     </div>
                 </div>
 
-                <button class="clear" @click="todos = []" >Clear All</button>
+                <button class="clear" @click="clearAllToDos(), storeToDos()" >Clear All</button>
 
                 <input type="text" v-model="newTodo" placeholder="Add new to-do">
-                <button class="add" @click="addTodo">Add</button>
+                <button class="add" @click="addTodo(), storeToDos()">Add</button>
 
                 <div class="instructions">
                     Instructions:
