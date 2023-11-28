@@ -7,7 +7,6 @@ const todoApp = {
     },
     methods: {
         addTodo() {
-            console.log("addTodo");
             if (!this.newTodo.text) {
                 this.todos.push({
                     text: this.newTodo,
@@ -18,7 +17,6 @@ const todoApp = {
             }
         },
         clearAllToDos() {
-            console.log("clearAllToDos");
             localStorage.clear();
             this.todos = [];
         },
@@ -31,9 +29,6 @@ const todoApp = {
     },
     created(){
         this.todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
-    },
-    beforeUpdate(){
-        console.log('beforeUpdate');
     }
 }
 
